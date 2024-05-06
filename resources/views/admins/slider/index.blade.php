@@ -49,7 +49,9 @@
                                                     <th>No</th>
                                                     <th>Image</th>
                                                     <th>Title</th>
+                                                    <th>Slug</th>
                                                     <th>Description</th>
+                                                    <th>Active</th>
                                                     <th>Created</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -60,13 +62,15 @@
                                                     <td>{{++$key}}</td>
                                                     <td id="image" style="display: flex;align-items: center;justify-content: center;margin: 30px;padding: 10px;"><img src="{{ asset('images/' . $slider->image) }}" alt="" style="height: 38px;border-radius: 2px;"></td>
                                                     <td>{{$slider->title}}</td>
+                                                    <td>{{$slider->slug}}</td>
                                                     <td>{{$slider->description}}</td>
+                                                    <td>{{$slider->active == '1' ? 'enable' : 'disable' }}</td>
                                                     <td>{{$slider->created_at}}</td>
                                                     <td style="margin: 30px;padding: 10px;">
-                                                        <button value="{{$slider->id}}" type="button" class="btn btn-outline-danger delete_users" data-bs-toggle="modal" data-bs-target="#centermodal">
+                                                        <button value="{{$slider->id}}" type="button" class="btn btn-outline-danger delete_slider" data-bs-toggle="modal" data-bs-target="#centermodal">
                                                             <i class="ri-delete-bin-2-line"></i>
                                                         </button>
-                                                        <button value="{{$slider->id}}" type="button" class="btn btn-outline-secondary update_users" data-bs-toggle="modal" data-bs-target="#fullscreeexampleModal">
+                                                        <button value="{{$slider->id}}" type="button" class="btn btn-outline-secondary update_slider" data-bs-toggle="modal" data-bs-target="#fullscreeexampleModal">
                                                             <i class="ri-ball-pen-line"></i>
                                                         </button>
                                                     </td>
@@ -101,8 +105,8 @@
     <script src="{{asset('admin/assets/vendor/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{asset('admin/assets/vendor/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js')}}"></script>
     @include("admins.include.right_sidebar")
-    @include("admins.user.detete_user")
-    @include("admins.user.update_user")
+    @include("admins.slider.delete")
+    @include("admins.slider.update")
     @include("admins.user.javascript")
     <script>
         $.ajaxSetup({

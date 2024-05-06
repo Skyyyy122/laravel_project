@@ -52,9 +52,8 @@
                                                     <th>Gender</th>
                                                     <th>Email</th>
                                                     <th>Phone</th>
-                                                    <!-- <th>Role</th> -->
-                                                    <!-- <th>Date</th> -->
-                                                    <th>Address</th>
+                                                    <th>Role</th>
+                                                    <th>Date</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -67,9 +66,8 @@
                                                     <td>{{$data->gender}}</td>
                                                     <td>{{$data->email}}</td>
                                                     <td>{{$data->phone}}</td>
-                                                    <!-- <td>{{ $data->role == '1' ? 'enable' : 'disable' }}</td> -->
-                                                    <!-- <td>{{$data->created_at}}</td> -->
-                                                    <td>{{$data->address}}</td>
+                                                    <td>{{ $data->role == '1' ? 'enable' : 'disable' }}</td>
+                                                    <td>{{$data->created_at}}</td>
                                                     <td style="margin: 30px;padding: 10px;">
                                                         <button value="{{$data->id}}" type="button" class="btn btn-outline-danger delete_users" data-bs-toggle="modal" data-bs-target="#centermodal">
                                                             <i class="ri-delete-bin-2-line"></i>

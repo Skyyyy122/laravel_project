@@ -110,14 +110,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/slider',[slider_controller::class,'index'])->name('slider.index');
         Route::get('/slider/create',[slider_controller::class,'create'])->name('slider.create');
         Route::post("/slider/store",[slider_controller::class,'store'])->name('slider.store');
+        Route::get("/slider/find",[slider_controller::class,'find'])->name('slider.find');
+        Route::post("slider/delete",[slider_controller::class,"delete"])->name("slider.delete");
+        Route::post("/slider/update",[slider_controller::class,'update'])->name('slider.update');
     });
 });
-
-
-// php artisan route:clear
-// php artisan cache:clear
-// php artisan view:clear
-// php artisan config:clear
-// php artisan serve
-
-

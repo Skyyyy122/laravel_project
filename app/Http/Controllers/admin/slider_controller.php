@@ -65,4 +65,22 @@ class slider_controller extends Controller
             );
         }
     }
+    public function find(Request $request){
+        $slider=slider::find($request->id);
+        return response()->json(
+            [
+                'status' => 200,
+                'slider' => $slider,
+            ]
+        );
+    }
+    public function delete(Request $request){
+        $slider=slider::find($request->id);
+        if($slider->delete()){
+            return redirect()->back();
+        }
+    }
+    public function update(Request $request){
+        echo '11111111111111111111111111111';
+    }
 }
